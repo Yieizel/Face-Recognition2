@@ -31,12 +31,13 @@ async function start() {
       const box = resizedDetections[i].detection.box
       const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
       drawBox.draw(canvas)
+      
     })
   })
 }
 
 function loadLabeledImages() {
-  const labels = ['Black Widow', 'Captain America', 'Captain Marvel', 'Hawkeye','Hulk','Ironman', 'Jim Rhodes', 'Thor', 'Tony Stark']
+  const labels = [ 'Captain America', 'Captain Marvel', 'Hawkeye','Hulk','Ironman', 'Jim Rhodes', 'Thor', 'Tony Stark','Black Widow']
   return Promise.all(
     labels.map(async label => {
       const descriptions = []
